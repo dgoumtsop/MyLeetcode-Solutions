@@ -1,0 +1,11 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        # time complexity O(1)
+        # space omplexity O(1)
+        count = {} 
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+            for num, freq in count.items():
+                if freq > len(nums) // 2:
+                    return num
+        
